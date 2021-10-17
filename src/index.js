@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import TimeTrackingApp from './TimeTrackingApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App className=""/>
+    <TimeTrackingApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
