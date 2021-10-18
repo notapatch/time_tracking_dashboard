@@ -1,5 +1,13 @@
 import { Tab } from '@headlessui/react'
 import jeremyImage from './assets/images/image-jeremy.png'
+import ellipsis from './assets/images/icon-ellipsis.svg'
+import exercise from './assets/images/icon-exercise.svg'
+import play from './assets/images/icon-play.svg'
+import selfCare from './assets/images/icon-self-care.svg'
+import social from './assets/images/icon-social.svg'
+import study from './assets/images/icon-study.svg'
+import work from './assets/images/icon-work.svg'
+
 const USER_ACCOUNT = {name: "Jeremy Robson", image: jeremyImage}
 
 function UserAccount(props) {
@@ -14,6 +22,27 @@ function UserAccount(props) {
       <div className="ml-5 text-left">
         <h3 className="text-sm font-normal text-neutral-blue-200">Report for</h3>
         <h2 className="text-2xl font-light text-white">{props.userAccount.name}</h2>
+      </div>
+    </div>
+  )
+}
+
+function TimeFrameRow(props) {
+  const icons = { exercise, play, "self-care": selfCare, social, study, work };
+
+  function fileFormat(fileName) {
+    return fileName.split(" ").join("-").toLowerCase();
+  }
+
+  return (
+    <div className={`bg-${fileFormat(props.timeTrack.title)} rounded-xl relative overflow-hidden`}>
+      <img src={icons[fileFormat(props.timeTrack.title)]} className="absolute -top-2.5 right-0" />
+      <div className="bg-neutral-blue-400 hover:bg-neutral-blue-350 mt-10 py-7 px-6 relative z-10 text-white grid grid-cols-2 items-center rounded-xl">
+        <p className="text-lg font-medium">{props.timeTrack.title}</p>
+        <div className="justify-self-end"><img src={ellipsis} alt="ellipsis" /></div>
+
+        <p className="text-3xl font-light">{`${props.timeTrack.timeframes[props.timeFrameType].current}hrs`}</p>
+        <p className="justify-self-end">{`Last week - ${props.timeTrack.timeframes[props.timeFrameType].previous}hrs`}</p>
       </div>
     </div>
   )
@@ -38,17 +67,13 @@ function TrackingTabs(props) {
         </div>
         <Tab.Panels className="mt-6">
           { timeFrameTypes().map(timeFrameType =>
-            <Tab.Panel className="space-y-6">
-              {props.timeTracks.map(timeTrack => {
-                return (
-                  <div>
-                    <h3>{timeTrack.title}</h3>
-                    <h3>{timeTrack.timeframes[timeFrameType].current}</h3>
-                    <h3>{timeTrack.timeframes[timeFrameType].previous}</h3>
-                  </div>
-                )
-              })}
-            </Tab.Panel>
+           <Tab.Panel className="space-y-6">
+             {props.timeTracks.map(timeTrack => {
+               return (
+                <TimeFrameRow timeTrack={timeTrack} timeFrameType={timeFrameType} />
+               )
+             })}
+           </Tab.Panel>
           )}
         </Tab.Panels>
       </div>
