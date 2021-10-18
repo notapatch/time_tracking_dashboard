@@ -19,23 +19,38 @@ function UserAccount(props) {
   )
 }
 
-function TrackingTabs() {
+function TrackingTabs(props) {
+  function timeFrameTypes() {
+    return Object.keys(props.timeTracks[0].timeframes);
+  }
+
   return (
     <Tab.Group>
       <div className="flex flex-col xl:flex-row">
-        <div>
-          <UserAccount userAccount={USER_ACCOUNT}/>
-          <Tab.List className="flex xl:flex-col justify-between xl:items-start">
-            <Tab>Daily</Tab>
-            <Tab>Weekly</Tab>
-            <Tab>Monthly</Tab>
+        <div className="relative">
+          <UserAccount userAccount={USER_ACCOUNT} />
+          <Tab.List className="flex xl:flex-col justify-between xl:items-start text-neutral-blue-300 bg-neutral-blue-400 pb-6 pt-12 px-9 -mt-6 rounded-xl">
+            {timeFrameTypes().map(timeFrameType =>
+              <Tab className="capitalize">{timeFrameType}</Tab>
+            )
+            }
           </Tab.List>
         </div>
-        <Tab.Panels>
-           <Tab.Panel>Daily stats</Tab.Panel>
-           <Tab.Panel>Weekly stats</Tab.Panel>
-           <Tab.Panel>Monthly stats</Tab.Panel>
-         </Tab.Panels>
+        <Tab.Panels className="mt-6">
+          { timeFrameTypes().map(timeFrameType =>
+            <Tab.Panel className="space-y-6">
+              {props.timeTracks.map(timeTrack => {
+                return (
+                  <div>
+                    <h3>{timeTrack.title}</h3>
+                    <h3>{timeTrack.timeframes[timeFrameType].current}</h3>
+                    <h3>{timeTrack.timeframes[timeFrameType].previous}</h3>
+                  </div>
+                )
+              })}
+            </Tab.Panel>
+          )}
+        </Tab.Panels>
       </div>
     </Tab.Group>
   )
@@ -45,7 +60,7 @@ function TimeTrackingApp(props) {
   return (
     <div className="App">
       <div className="px-6 py-20 bg-neutral-blue-500">
-        <TrackingTabs />
+        <TrackingTabs timeTracks={props.timeTracks} />
       </div>
     </div>
   );
