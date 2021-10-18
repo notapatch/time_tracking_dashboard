@@ -25,6 +25,9 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Rubik', ...defaultTheme.fontFamily.sans]
+      },
+      gridTemplateColumns: {
+        "user-report": 'auto 1fr'
       }
     },
   },
