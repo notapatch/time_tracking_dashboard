@@ -1,5 +1,4 @@
 import { Tab } from '@headlessui/react'
-import jeremyImage from './assets/images/image-jeremy.png'
 import ellipsis from './assets/images/icon-ellipsis.svg'
 import exercise from './assets/images/icon-exercise.svg'
 import play from './assets/images/icon-play.svg'
@@ -8,20 +7,18 @@ import social from './assets/images/icon-social.svg'
 import study from './assets/images/icon-study.svg'
 import work from './assets/images/icon-work.svg'
 
-const USER_ACCOUNT = {name: "Jeremy Robson", image: jeremyImage}
-
-function UserAccount(props) {
+function Account(props) {
   return (
     <div className="bg-report grid grid-cols-user-report rounded-xl p-9 relative z-10">
       <div>
         <img className="relative z-30 inline-block h-16 w-16 rounded-full ring-2 ring-white"
-             src={props.userAccount.image}
+             src={require(`./assets/images/image-${props.account.username}.png`).default}
              alt="user portrait'"
         />
       </div>
       <div className="ml-5 text-left">
         <h3 className="text-sm font-normal text-neutral-blue-200">Report for</h3>
-        <h2 className="text-2xl font-light text-white">{props.userAccount.name}</h2>
+        <h2 className="text-2xl font-light text-white">{props.account.name}</h2>
       </div>
     </div>
   )
@@ -50,14 +47,14 @@ function TimeFrameRow(props) {
 
 function TrackingTabs(props) {
   function timeFrameTypes() {
-    return Object.keys(props.timeTracks[0].timeframes);
+    return Object.keys(props.userTimeTracks.timeTracks[0].timeframes);
   }
 
   return (
     <Tab.Group>
       <div className="flex flex-col xl:flex-row">
         <div className="relative">
-          <UserAccount userAccount={USER_ACCOUNT} />
+          <Account account={props.userTimeTracks.account} />
           <Tab.List className="flex xl:flex-col justify-between xl:items-start text-neutral-blue-300 bg-neutral-blue-400 pb-6 pt-12 px-9 -mt-6 rounded-xl">
             {timeFrameTypes().map(timeFrameType =>
               <Tab className="capitalize">{timeFrameType}</Tab>
@@ -68,7 +65,7 @@ function TrackingTabs(props) {
         <Tab.Panels className="mt-6">
           { timeFrameTypes().map(timeFrameType =>
            <Tab.Panel className="space-y-6">
-             {props.timeTracks.map(timeTrack => {
+             {props.userTimeTracks.timeTracks.map(timeTrack => {
                return (
                 <TimeFrameRow timeTrack={timeTrack} timeFrameType={timeFrameType} />
                )
@@ -85,7 +82,7 @@ function TimeTrackingApp(props) {
   return (
     <div className="App">
       <div className="px-6 py-20 bg-neutral-blue-500">
-        <TrackingTabs timeTracks={props.timeTracks} />
+        <TrackingTabs userTimeTracks={props.userTimeTracks} />
       </div>
     </div>
   );

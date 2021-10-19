@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import TimeTrackingApp from './TimeTrackingApp';
-import TimeTracks from './data/timeTracks.json'
+import UserTimeTracks from './data/timeTracks.json'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TimeTrackingApp timeTracks={TimeTracks} />
+    <TimeTrackingApp userTimeTracks={UserTimeTracks} />
   </React.StrictMode>,
   document.getElementById('root')
 );
