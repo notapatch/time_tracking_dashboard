@@ -47,14 +47,14 @@ function TimeFrameRow(props) {
 
 function TrackingTabs(props) {
   function timeFrameTypes() {
-    return Object.keys(props.userTimeTracks.timeTracks[0].timeframes);
+    return Object.keys(props.report.timeTracks[0].timeframes);
   }
 
   return (
     <Tab.Group>
       <div className="flex flex-col xl:flex-row">
         <div className="relative">
-          <Account account={props.userTimeTracks.account} />
+          <Account account={props.report.account} />
           <Tab.List className="flex xl:flex-col justify-between xl:items-start text-neutral-blue-300 bg-neutral-blue-400 pb-6 pt-12 px-9 -mt-6 rounded-xl">
             {timeFrameTypes().map(timeFrameType =>
               <Tab className="capitalize">{timeFrameType}</Tab>
@@ -65,7 +65,7 @@ function TrackingTabs(props) {
         <Tab.Panels className="mt-6">
           { timeFrameTypes().map(timeFrameType =>
            <Tab.Panel className="space-y-6">
-             {props.userTimeTracks.timeTracks.map(timeTrack => {
+             {props.report.timeTracks.map(timeTrack => {
                return (
                 <TimeFrameRow timeTrack={timeTrack} timeFrameType={timeFrameType} />
                )
@@ -82,7 +82,7 @@ function TimeTrackingApp(props) {
   return (
     <div className="App">
       <div className="px-6 py-20 bg-neutral-blue-500">
-        <TrackingTabs userTimeTracks={props.userTimeTracks} />
+        <TrackingTabs report={props.report} />
       </div>
     </div>
   );
