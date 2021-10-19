@@ -1,5 +1,6 @@
 import { Tab } from '@headlessui/react'
 import jeremyImage from './assets/images/image-jeremy.png'
+const USER_ACCOUNT = {name: "Jeremy Robson", image: jeremyImage}
 
 function UserAccount(props) {
   return (
@@ -23,6 +24,7 @@ function TrackingTabs() {
     <Tab.Group>
       <div className="flex flex-col xl:flex-row">
         <div>
+          <UserAccount userAccount={USER_ACCOUNT}/>
           <Tab.List className="flex xl:flex-col justify-between xl:items-start">
             <Tab>Daily</Tab>
             <Tab>Weekly</Tab>
@@ -40,11 +42,10 @@ function TrackingTabs() {
 }
 
 function TimeTrackingApp(props) {
-  const USER_ACCOUNT = {name: "Jeremy Robson", image: jeremyImage}
   return (
     <div className="App">
       <div className="px-6 py-20 bg-neutral-blue-500">
-        <UserAccount userAccount={USER_ACCOUNT}/>
+        <TrackingTabs />
       </div>
     </div>
   );
