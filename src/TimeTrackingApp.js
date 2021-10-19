@@ -7,6 +7,10 @@ import social from './assets/images/icon-social.svg'
 import study from './assets/images/icon-study.svg'
 import work from './assets/images/icon-work.svg'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
 function Account(props) {
   return (
     <div className="bg-report grid grid-cols-user-report xl:grid-cols-1 rounded-xl p-9 relative z-10">
@@ -57,7 +61,14 @@ function TrackingTabs(props) {
           <Account account={props.report.account} />
           <Tab.List className="flex xl:flex-col justify-between xl:space-y-5 xl:items-start text-neutral-blue-300 pb-6 pt-12 px-9 -mt-6 rounded-xl">
             {timeFrameTypes().map(timeFrameType =>
-              <Tab className="capitalize">{timeFrameType}</Tab>
+              <Tab
+                className={({ selected }) =>
+                  classNames(
+                    "capitalize ",
+                            selected ? "text-white" : ""
+                  )
+                }
+              >{timeFrameType}</Tab>
             )
             }
           </Tab.List>
