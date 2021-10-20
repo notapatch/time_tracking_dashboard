@@ -1,7 +1,24 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  purge: {
+    enabled: true,
+    content: ['./src/**/*.{js,jsx,ts,tsx,css}', './public/index.html'],
+    safelist: [
+      'bg-exercise',
+      'bg-play',
+      'bg-self-care',
+      'bg-social',
+      'bg-study',
+      'bg-work',
+      'bg-img-exercise',
+      'bg-img-play',
+      'bg-img-self-care',
+      'bg-img-social',
+      'bg-img-study',
+      'bg-img-work',
+    ]
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
