@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-timetracking-dev-164703-authRole",
+            "UnauthRoleArn": "arn:aws:iam::690027899023:role/amplify-timetracking-dev-164703-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::690027899023:role/amplify-timetracking-dev-164703-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-timetracking-dev-164703-deployment",
+            "UnauthRoleName": "amplify-timetracking-dev-164703-unauthRole",
+            "StackName": "amplify-timetracking-dev-164703",
+            "StackId": "arn:aws:cloudformation:eu-west-2:690027899023:stack/amplify-timetracking-dev-164703/fab98e40-31bc-11ec-9226-06fb53cfd600",
+            "AmplifyAppId": "d3jmxob2o1pg1m"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3jmxob2o1pg1m",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}
