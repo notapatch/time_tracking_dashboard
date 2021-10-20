@@ -5,6 +5,17 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      backgroundImage: {
+        'img-exercise': 'url("./assets/images/icon-exercise.svg")',
+        'img-play': 'url("./assets/images/icon-play.svg")',
+        'img-self-care': 'url("./assets/images/icon-self-care.svg")',
+        'img-social': 'url("./assets/images/icon-social.svg")',
+        'img-study': 'url("./assets/images/icon-study.svg")',
+        'img-work': 'url("./assets/images/icon-work.svg")',
+      },
+      backgroundPosition: {
+       'right-above-top' : 'right top -9px',
+      },
       colors: {
         report: 'var(--color-report)',
 

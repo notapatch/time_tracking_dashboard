@@ -1,11 +1,5 @@
 import { Tab } from '@headlessui/react'
 import ellipsis from './assets/images/icon-ellipsis.svg'
-import exercise from './assets/images/icon-exercise.svg'
-import play from './assets/images/icon-play.svg'
-import selfCare from './assets/images/icon-self-care.svg'
-import social from './assets/images/icon-social.svg'
-import study from './assets/images/icon-study.svg'
-import work from './assets/images/icon-work.svg'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -29,16 +23,13 @@ function Account(props) {
 }
 
 function TimeFrameRow(props) {
-  const icons = { exercise, play, "self-care": selfCare, social, study, work };
-
   function fileFormat(fileName) {
     return fileName.split(" ").join("-").toLowerCase();
   }
 
   return (
-    <div className={`bg-${fileFormat(props.timeTrack.title)} rounded-xl relative overflow-hidden`}>
-      <img src={icons[fileFormat(props.timeTrack.title)]} className="absolute -top-2.5 right-0" />
-      <div className="bg-neutral-blue-400 hover:bg-neutral-blue-350 mt-10 xl:h-52 py-7 px-6 relative z-10 text-white grid grid-cols-2 items-center rounded-xl">
+    <div className={`bg-${fileFormat(props.timeTrack.title)} bg-img-${fileFormat(props.timeTrack.title)}  bg-no-repeat bg-right-above-top rounded-xl`}>
+      <div className="bg-neutral-blue-400 hover:bg-neutral-blue-350 mt-10 xl:h-52 py-7 px-6 text-white grid grid-cols-2 items-center rounded-xl">
         <p className="text-lg font-medium">{props.timeTrack.title}</p>
         <div className="justify-self-end"><img src={ellipsis} alt="ellipsis" /></div>
 
