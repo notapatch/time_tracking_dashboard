@@ -21,6 +21,15 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontSize: {
+     'sm': '0.9375rem',    // 15pt
+     'base': '1rem',       // 16pt
+     'lg': '1.125rem', // 18pt
+     '2xl': '1.4rem',        // 24pt
+     '3xl': '2rem',        // 32pt
+     '4xl': '2.5rem',      // 40pt
+     '5xl': '3.5rem',      // 56pt
+    },
     extend: {
       backgroundImage: {
         'img-exercise': 'url("./assets/images/icon-exercise.svg")',

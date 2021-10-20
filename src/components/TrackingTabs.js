@@ -13,7 +13,7 @@ function TrackingTabs(props) {
       <div className="flex flex-col xl:flex-row">
         <div className="relative bg-neutral-blue-400 rounded-xl">
           <Account account={props.report.account} />
-          <Tab.List className="flex xl:flex-col justify-between xl:space-y-5 xl:items-start text-neutral-blue-300 pb-6 pt-12 px-9 -mt-6 rounded-xl">
+          <Tab.List className="flex xl:flex-col justify-between xl:space-y-5 xl:items-start text-lg text-neutral-blue-300 pb-6 pt-12 px-9 -mt-6 rounded-xl">
             {timeFrameTypes().map(timeFrameType =>
               <Tab
                 className={({ selected }) =>
