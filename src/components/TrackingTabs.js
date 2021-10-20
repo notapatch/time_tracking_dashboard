@@ -1,6 +1,6 @@
 import {Tab} from "@headlessui/react";
-import Account from "./Account";
-import TimeFrameRow from "./TimeFrameRow";
+import AccountCard from "./AccountCard";
+import TimeFrameCard from "./TimeFrameCard";
 import { classNames } from "../utils/ClassNames";
 
 function TrackingTabs(props) {
@@ -12,7 +12,7 @@ function TrackingTabs(props) {
     <Tab.Group>
       <div className="flex flex-col xl:flex-row">
         <div className="relative bg-neutral-blue-400 rounded-xl">
-          <Account account={props.report.account} />
+          <AccountCard account={props.report.account} />
           <Tab.List className="flex xl:flex-col justify-between xl:space-y-5 xl:items-start text-lg text-neutral-blue-300 pb-6 pt-12 px-9 -mt-6 rounded-xl">
             {timeFrameTypes().map(timeFrameType =>
               <Tab
@@ -32,7 +32,7 @@ function TrackingTabs(props) {
             <Tab.Panel className="space-y-6 xl:ml-8 xl:space-y-0 xl:grid grid-cols-3 xl:gap-8">
               {props.report.timeTracks.map(timeTrack => {
                 return (
-                  <TimeFrameRow timeTrack={timeTrack} timeFrameType={timeFrameType} />
+                  <TimeFrameCard timeTrack={timeTrack} timeFrameType={timeFrameType} />
                 )
               })}
             </Tab.Panel>

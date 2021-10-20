@@ -1,4 +1,4 @@
-function Account(props) {
+function AccountCard(props) {
   return (
     <div className="bg-report grid grid-cols-user-report xl:grid-cols-1 rounded-xl p-9 relative z-10">
       <div>
@@ -15,4 +15,4 @@ function Account(props) {
   )
 }
 
-export default Account;
+export default AccountCard;

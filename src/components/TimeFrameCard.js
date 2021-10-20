@@ -1,6 +1,6 @@
 import ellipsis from "../assets/images/icon-ellipsis.svg";
 
-function TimeFrameRow(props) {
+function TimeFrameCard(props) {
   function fileFormat(fileName) {
     return fileName.split(" ").join("-").toLowerCase();
   }
@@ -20,4 +20,4 @@ function TimeFrameRow(props) {
   )
 }
 
-export default TimeFrameRow;
+export default TimeFrameCard;
