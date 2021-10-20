@@ -6,8 +6,10 @@ function TimeFrameRow(props) {
   }
 
   return (
-    <div className={`bg-${fileFormat(props.timeTrack.title)} bg-img-${fileFormat(props.timeTrack.title)}  bg-no-repeat bg-right-above-top rounded-xl`}>
-      <div className="bg-neutral-blue-400 hover:bg-neutral-blue-350 mt-10 xl:h-52 py-7 px-6 text-white grid grid-cols-2 items-center rounded-xl">
+    <div>
+      <div className={`bg-${fileFormat(props.timeTrack.title)} bg-img-${fileFormat(props.timeTrack.title)}  bg-no-repeat bg-right-above-top rounded-xl h-20`}>
+      </div>
+      <div className="bg-neutral-blue-400 hover:bg-neutral-blue-350 -mt-10 xl:h-52 py-7 px-6 text-white grid grid-cols-2 items-center rounded-xl">
         <p className="text-lg font-medium">{props.timeTrack.title}</p>
         <div className="justify-self-end"><img src={ellipsis} alt="ellipsis" /></div>
 
