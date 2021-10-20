@@ -58,13 +58,16 @@ module.exports = {
           350: 'var(--color-neutral-blue-350)',
           400: 'var(--color-neutral-blue-400)',
           500: 'var(--color-neutral-blue-500)',
-        }
+        },
       },
       fontFamily: {
         sans: ['Rubik', ...defaultTheme.fontFamily.sans]
       },
       gridTemplateColumns: {
         "user-report": 'auto 1fr'
+      },
+      minWidth: {
+        '61': '244px'
       }
     },
   },
