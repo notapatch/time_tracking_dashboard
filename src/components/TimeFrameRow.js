@@ -14,7 +14,7 @@ function TimeFrameRow(props) {
         <div className="justify-self-end"><img src={ellipsis} alt="ellipsis" /></div>
 
         <p className="text-5xl font-light">{`${props.timeTrack.timeframes[props.timeFrameType].current}hrs`}</p>
-        <p className="text-sm justify-self-end xl:justify-self-start xl:col-span-2">{`Last week - ${props.timeTrack.timeframes[props.timeFrameType].previous}hrs`}</p>
+        <p className="text-sm justify-self-end text-neutral-blue-200 xl:justify-self-start xl:col-span-2">{`Last week - ${props.timeTrack.timeframes[props.timeFrameType].previous}hrs`}</p>
       </div>
     </div>
   )
