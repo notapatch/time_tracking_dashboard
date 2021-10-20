@@ -82,3 +82,10 @@ Flexbox solved the view display with the tab headings in one box and the tab dat
 I passed the props into the tab function everything was straight forward except
 ReactJS didn't accept the for loop and I went with map instead.
 
+### Utils
+
+Commonly used files that don't fit into the component / file you are writing goes into Utils 
+or helper functions. Common structures are "utils" directory with one function per file
+or files with common functions. In this example I had a function classNames that allows the
+developer to conditionally joining css class names together.
+
