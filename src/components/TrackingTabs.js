@@ -1,10 +1,7 @@
 import {Tab} from "@headlessui/react";
 import Account from "./Account";
 import TimeFrameRow from "./TimeFrameRow";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { classNames } from "../utils/ClassNames";
 
 function TrackingTabs(props) {
   function timeFrameTypes() {
