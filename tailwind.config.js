@@ -66,6 +66,9 @@ module.exports = {
       gridTemplateColumns: {
         "user-report": 'auto 1fr'
       },
+      maxWidth: {
+        '64': '256px'
+      },
       minWidth: {
         '61': '244px'
       }

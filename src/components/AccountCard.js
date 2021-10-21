@@ -1,6 +1,6 @@
 function AccountCard(props) {
   return (
-    <div className="bg-report grid grid-cols-user-report xl:grid-cols-1 rounded-xl p-9 relative z-10">
+    <div className="bg-report grid grid-cols-user-report xl:grid-cols-1 rounded-xl p-9 relative z-10 xl:max-w-64">
       <div>
         <img className="relative z-30 inline-block h-16 w-16 rounded-full ring-2 ring-white"
              src={require(`./../assets/images/image-${props.account.username}.png`).default}
