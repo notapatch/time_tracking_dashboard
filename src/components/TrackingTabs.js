@@ -9,7 +9,7 @@ function TrackingTabs(props) {
   }
 
   return (
-    <Tab.Group>
+    <Tab.Group defaultIndex={1}>
       <div className="flex flex-col xl:flex-row">
         <div className="relative bg-neutral-blue-400 rounded-xl">
           <AccountCard account={props.report.account} />
